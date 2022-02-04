@@ -2,6 +2,7 @@ package baekjoon;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
+import java.math.BigInteger;
 import java.util.StringTokenizer;
 
 public class BJ_15964 {
@@ -13,6 +14,9 @@ public class BJ_15964 {
 		BigInteger i1 = new BigInteger(st.nextToken());
 		BigInteger i2 = new BigInteger(st.nextToken());
 		
-		System.out.println((i1 + i2) * (i1 - i2));
+		BigInteger i3 = i1.add(i2);
+		BigInteger i4 = i1.subtract(i2);
+		
+		System.out.println(i3.multiply(i4));
 	}
 }
