@@ -3,7 +3,7 @@ package swea;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
-
+// 상호의 배틀필드
 public class SWEA_1873 {
 	public static void main(String[] args) throws Exception{
 		BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));

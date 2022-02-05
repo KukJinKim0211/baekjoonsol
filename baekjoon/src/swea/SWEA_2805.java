@@ -3,7 +3,7 @@ package swea;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
-
+// 농작물 수확하기
 public class SWEA_2805 {
 	public static void main(String[] args) throws Exception {
 		BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
