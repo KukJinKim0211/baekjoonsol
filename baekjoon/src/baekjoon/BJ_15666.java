@@ -23,16 +23,18 @@ public class BJ_15666 {
 		Arrays.sort(iArray);
 
 		Map<Integer, Integer> map = new HashMap<>();
-		int iIndex = 0;
-		for (int i = 0; i < iLength; i++) {
-			if (!map.containsKey(iArray[i])) {
-				map.put(iArray[i], iIndex++);
-				System.out.println(iArray[i]);
+		map.put(0, iArray[0]);
+		int iIndex = 1;
+		for (int i = 1; i < iLength; i++) {
+			if (map.get(iIndex - 1) != iArray[i]) {
+				map.put(iIndex++, iArray[i]);
 			}
 		}
 		
 		for (int i = 0; i < map.size(); i++) {
-			System.out.println(map.get(i));
+			for (int j = i; j < map.size(); j++) {
+				System.out.println(map.get(i) + " " + map.get(j));
+			}
 		}
 	}
 }
