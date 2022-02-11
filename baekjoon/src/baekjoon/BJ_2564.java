@@ -3,7 +3,7 @@ package baekjoon;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
-
+// 경비원
 public class BJ_2564 {
 	static int garo;
 	static int sero;
