@@ -58,6 +58,7 @@ public class BJ_10158 {
 			}
 		}
 		
-		System.out.println(Math.abs((iM -1) - iRow) + " " + iCol);
+		System.out.println(iRow + " " + iCol);
+		System.out.println(Math.abs(iN - iRow) + " " + iCol);
 	}
 }
