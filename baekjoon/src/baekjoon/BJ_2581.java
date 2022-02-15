@@ -2,32 +2,41 @@ package baekjoon;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
-import java.util.StringTokenizer;
 
-//소수 구하기
-public class BJ_1929 {
+// 소수
+public class BJ_2581 {
 	public static void main(String[] args) throws Exception {
 		BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
-		StringBuilder sb = new StringBuilder();
 		
-		StringTokenizer st = new StringTokenizer(bf.readLine());
+		int iN = Integer.parseInt(bf.readLine());
+		int iM = Integer.parseInt(bf.readLine());
 		
-		int iN = Integer.parseInt(st.nextToken());
-		int iM = Integer.parseInt(st.nextToken());
 		boolean bsosu = true;
+		int iSum = 0;
+		int iMin = 0;
 		for (int i = iN; i <= iM; i++) {
+			bsosu = true;
 			if (i == 1)
 				continue;
-			bsosu = true;
 			for (int j = 2; j <= Math.sqrt(i); j++) {
 				if (i % j == 0) {
 					bsosu = false;
 					break;
 				}
 			}
-			if (bsosu)
-				sb.append(i + "\n");
+			
+			if (bsosu) {
+				iSum += i;
+				if (iMin == 0)
+					iMin = i;
+			}
 		}
-		System.out.println(sb);
+		
+		if (iMin == 0)
+			System.out.println(-1);
+		else {
+			System.out.println(iSum);
+			System.out.println(iMin);
+		}
 	}
 }
