@@ -6,7 +6,7 @@ import java.util.StringTokenizer;
 
 public class BJ_2579 {
 	public static void main(String[] args) throws Exception {
-		BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
+		/*BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
 		int iCount = Integer.parseInt(bf.readLine());
 		int[] iArray = new int[iCount];
 		
@@ -41,6 +41,6 @@ public class BJ_2579 {
 				ifIndex -= 2;
 				continue;
 			}
-		}
+		}*/
 	}
 }
