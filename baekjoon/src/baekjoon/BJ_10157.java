@@ -27,7 +27,7 @@ public class BJ_10157 {
 			if (iAdd + N > iIndex)
 				System.out.println((iCount + iIndex - 1) + " " + (iCount));
 			else if (iAdd + N + M > iIndex)
-				System.out.println((iM - iCount) + " " + )
+				System.out.println((iM - iCount) + " ");
 			return;
 		}
 	}

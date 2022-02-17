@@ -11,7 +11,7 @@ import java.util.StringTokenizer;
 // 창고 다각형
 public class BJ_2304 {
 	public static void main(String[] args) throws Exception {
-		BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
+		/*BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
 		int iSize = Integer.parseInt(bf.readLine());
 		StringTokenizer st;
 		int[][] iArray = new int[2][iSize];
@@ -50,6 +50,6 @@ public class BJ_2304 {
 			else { // 내려가는시점
 				
 			}
-		}
+		}*/
 	}
 }
