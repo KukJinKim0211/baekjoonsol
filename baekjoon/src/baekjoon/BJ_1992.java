@@ -17,73 +17,32 @@ public class BJ_1992 {
 				iArray[i][j] = str.charAt(j) - '0';
 			}
 		}
-		sb.append("(");
-		find(0, 0, iSize, iSize);
-		sb.append(")");
-		System.out.println(sb);
+		 find(0, 0, iSize);
+	     System.out.println(sb.toString());
 	}
-	
-	static void find(int firstX, int firstY, int lastX, int lastY) {
-		if (firstX == lastX && firstY == lastY)
-			return;
-		int iSum = 0;
-		// 좌상 사분면 검사
-		for (int i = firstX; i < (firstX + lastX) / 2; i++) {
-			for (int j = firstY; j < (firstY + lastY) / 2; j++) {
-				iSum += iArray[i][j];
-			}
-		}
-		if (iSum == 0)
-			sb.append("0");
-		else if (iSum == (lastX - firstX) * (lastY - firstY))
-			sb.append("1");
-		else {
-			find(firstX, firstY, (firstX + lastX) / 2, (firstY + lastY) / 2);
-		}
-
-		iSum = 0;
-		// 우상 사분면 검사
-		for (int i = firstX; i < lastX / 2; i++) {
-			for (int j = (firstY + lastY) / 2; j < lastY; j++) {
-				iSum += iArray[i][j];
-			}
-		}
-		if (iSum == 0)
-			sb.append("0");
-		else if (iSum == (lastX - firstX) * (lastY - firstY))
-			sb.append("1");
-		else {
-			find(firstX, (firstY + lastY) / 2, lastX / 2, lastY);
-		}
-
-		iSum = 0;
-		// 좌하 사분면 검사
-		for (int i = (firstX + lastX) / 2; i < lastX; i++) {
-			for (int j = firstY; j < lastY / 2; j++) {
-				iSum += iArray[i][j];
-			}
-		}
-		if (iSum == 0)
-			sb.append("0");
-		else if (iSum == (lastX - firstX) * (lastY - firstY))
-			sb.append("1");
-		else {
-			find((firstX + lastX) / 2, firstY, lastX, lastY / 2);
-		}
-		
-		iSum = 0;
-		// 우하 사분면 검사
-		for (int i = (firstX + lastX) / 2; i < lastX; i++) {
-			for (int j = (firstY + lastY) / 2; j < lastY; j++) {
-				iSum += iArray[i][j];
-			}
-		}
-		if (iSum == 0)
-			sb.append("0");
-		else if (iSum == (lastX - firstX) * (lastY - firstY))
-			sb.append("1");
-		else {
-			find((firstX + lastX) / 2, (firstY + lastY) / 2, lastX, lastY);
-		}
-	}
+    
+    public static void find(int irow, int icol, int isize) {
+        if(check(irow, icol, isize)) 
+            sb.append(iArray[irow][icol]);
+        else {
+            sb.append("(");
+            int iNextSize = isize / 2;
+            find(irow, icol, iNextSize);
+            find(irow, icol + iNextSize, iNextSize);
+            find(irow + iNextSize, icol, iNextSize);
+            find(irow + iNextSize, icol + iNextSize, iNextSize);
+            sb.append(")");
+        }
+    }
+    
+    public static boolean check(int irow, int icol, int isize) {
+        int iNum = iArray[irow][icol];
+        
+        for(int i = irow; i < irow + isize; i++) {
+            for(int j = icol; j < icol + isize; j++) {
+                if(iNum != iArray[i][j]) return false;
+            }
+        }
+        return true;
+    }
 }
