@@ -14,6 +14,7 @@ public class BJ_2495 {
 		}
 		
 		for (int i = 0; i < 3; i++) {
+			x	
 			int iMax = 0;
 			int iCount = 1;
 			int iValue = sArray[i].charAt(0);
