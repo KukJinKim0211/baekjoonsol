@@ -1,2 +1,3 @@
 module baekjoon {
+	requires rt;
 }
